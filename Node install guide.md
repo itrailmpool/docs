@@ -23,7 +23,6 @@ wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
 ##### 2. Распакуйте архив и перейдите в директорию с исходным кодом:
 ```sh
 tar -xvf db-4.8.30.NC.tar.gz
-cd db-4.8.30.NC/build_unix/
 ```
 ##### 3. Исправление конфликта имен в Berkeley DB для успешной компиляции:
 ```sh
@@ -36,6 +35,7 @@ mkdir -p /opt/db-4.8.30.NC/
 ##### 5. Сконфигурируйте и установите Berkeley DB 4.8:
 Данная команда выполняет скрипт configure, который подготавливает исходный код для сборки на вашей системе.
 ```sh
+cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/opt/db-4.8.30.NC
 ```
 
