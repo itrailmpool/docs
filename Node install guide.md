@@ -138,7 +138,7 @@ This is experimental software.
 Distributed under the MIT software license, see the accompanying file COPYING
 or <https://opensource.org/licenses/MIT>
 ```
-Либо возпользоваться командой whereis и посмотреть, возвращает ли она путь к bitcoind и bitcoin-cli.
+Либо воспользоваться командой whereis и посмотреть, возвращает ли она путь к bitcoind и bitcoin-cli.
 ```sh
 whereis bitcoind
 whereis bitcoin-cli
@@ -147,7 +147,7 @@ whereis bitcoin-cli
 ```sh
 export PATH=$PATH:/home/user/bitcoin/bin
 ```
-Чтобы изменения были постоянными и bitcoin-cli и bitcoind были доступен в $PATH при каждом запуске терминала, вы можете добавить эту команду в файл .bashrc или .bash_profile в вашем домашнем каталоге:
+Чтобы изменения были постоянными и bitcoin-cli и bitcoind были доступен в $PATH при каждом запуске терминала, добавьте эту команду в файл .bashrc или .bash_profile в вашем домашнем каталоге:
 ```sh
 echo 'export PATH=$PATH:/home/user/bitcoin/bin' >> ~/.bashrc
 ```
