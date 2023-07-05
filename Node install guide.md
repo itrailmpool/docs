@@ -118,6 +118,15 @@ sudo make install
 ```
 Процесс установки может занять некоторое время, в зависимости от производительности системы. В конце процесса bitcoin-cli и bitcoind будут установлены.
 
+При установке в кастомный каталог потребуется явно указать путь к bitcoin-cli и bitcoind:
+```sh
+export PATH=$PATH:/opt/bitcoin-23/bin
+```
+Чтобы изменения были постоянными и bitcoin-cli и bitcoind были доступен в $PATH при каждом запуске терминала, добавьте эту команду в файл .bashrc или .bash_profile в вашем домашнем каталоге:
+```sh
+echo 'export PATH=$PATH:/opt/bitcoin-23/bin' >> ~/.bashrc
+```
+
 Это можно проверить так:
 ```sh
 bitcoind --version
@@ -143,14 +152,7 @@ or <https://opensource.org/licenses/MIT>
 whereis bitcoind
 whereis bitcoin-cli
 ```
-При установке в кастомный каталог может потребоваться явно указать путь к bitcoin-cli и bitcoind:
-```sh
-export PATH=$PATH:/home/user/bitcoin/bin
-```
-Чтобы изменения были постоянными и bitcoin-cli и bitcoind были доступен в $PATH при каждом запуске терминала, добавьте эту команду в файл .bashrc или .bash_profile в вашем домашнем каталоге:
-```sh
-echo 'export PATH=$PATH:/home/user/bitcoin/bin' >> ~/.bashrc
-```
+
 ### Шаг 6. Создание конфигурационного файла bitcoin.conf
 Файл bitcoin.conf — это конфигурационный файл для bitcoind. Он содержит различные настройки для выполнения ноды Bitcoin. Основная структура файла представляет собой простой текстовый файл, в котором каждая строка представляет собой ключевую пару ключ=значение.
 
