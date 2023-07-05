@@ -163,17 +163,77 @@ nano bitcoin.conf
 ```
 Добавьте следующие парамтеры и сохраните файл:
 ```sh
+# Enable pruning to save disk space
+prune=2000
+
+# Run in the background as a daemon and accept commands
 daemon=1
-prune=3000
+
+# Set the directory for the blocks
+datadir=/home/user/bitcoin-23
+
+# Set the directory for the logs
+debuglogfile=/home/user/log/bitcoin-23/debug.log
+
+# RPC Settings
 rpcuser=bitcoin
 rpcpassword=bitcoin
-zmqpubhashblock=tcp://127.0.0.1:15101
+rpcbind=0.0.0.0
+rpcallowip=192.168.86.0/24
+rpcport=8332
+
+# Server mode
+server=1
+
+# ZeroMQ notification options
+zmqpubhashblock=tcp://0.0.0.0:28332
 ```
-`TODO: update and add description for all params `
+Описание параметров конфигурационного файла:
+- `prune=2000` параметр позволяет вам обрезать (или "prune") блокчейн, сохраняя только определенное количество МБ данных. В данном случае, Bitcoin Core будет хранить только последние 2000 МБ данных блокчейна, удаляя старые блоки, чтобы сэкономить место на диске.
+- `daemon=1` Запускает Bitcoin Core в режиме демона, то есть в фоновом режиме. Bitcoin Core будет продолжать работать, даже если вы закроете консоль, с которой его запустили.
+- `datadir=/path/to/your/data/directory` устанавливает каталог, где Bitcoin Core будет хранить данные блокчейна. Замените /path/to/your/data/directory на реальный путь к каталогу.
+- `debuglogfile=/path/to/your/log/directory/debug.log` устанавливает каталог, где Bitcoin Core будет сохранять логи отладки. Замените /path/to/your/log/directory/debug.log на реальный путь к каталогу и имени файла.
+- `rpcuser=bitcoin` и `rpcpassword=bitcoin` устанавливает имя пользователя и пароль для JSON-RPC подключений. В этом случае, имя пользователя и пароль оба установлены как "bitcoin".
+- `rpcbind=0.0.0.0` позволяет RPC подключениям с любого IP-адреса.
+- `rpcallowip=192.168.86.0/24` разрешает RPC подключения только с IP-адресов в указанном диапазоне.
+- `rpcport=8332` устанавливает порт для RPC подключений. В данном случае, порт установлен на 8332.
+- `server=1` запускает Bitcoin Core в режиме сервера, что позволяет ему принимать JSON-RPC команды.
+- `zmqpubhashblock=tcp://0.0.0.0:28332` включает оповещения ZeroMQ для новых блоков. Это нужно, чтобы внешнее приложение (майнинг-пул), могло получать уведомления каждый раз, когда нода Bitcoin Core обнаруживает новый блок.
 
 ### Шаг 7. Запуск Bitcoin Core
+Перед запуском создайте рабочий каталог и каталог для логов указанные в конфигурационном файле:
 ```sh
-bitcoind -daemon -conf=/home/user/bitcoin-23/bitcoin.conf
+mkdir -p /home/user/bitcoin-23
+mkdir -p /home/user/log/bitcoin-23/
 ```
-Bitcoin Core будет работать в фоновом режиме. Вы можете взаимодействовать с ней, используя bitcoin-cli.
-`TODO: add  bitcoin-cli examples `
+Запускаем ноду Bitcoin Core указывая путь к конфигурационному файлу:
+```sh
+bitcoind -conf=/opt/bitcoin-23/bitcoin.conf
+```
+Bitcoin Core будет работать в фоновом режиме. Вы можете взаимодействовать с ней, используя bitcoin-cli интерфейс командной строки (CLI).
+
+`getblockchaininfo` это команда RPC, которая возвращает различную статистическую информацию о текущем состоянии блокчейна. 
+```sh
+bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getblockchaininfo
+```
+Пример ответа ноды:
+```sh
+{
+  "chain": "main",
+  "blocks": 229666,
+  "headers": 797322,
+  "bestblockhash": "0000000000000041e3ae6b19b0719282ea2241b897064418b1dc636012cbc714",
+  "difficulty": 6695826.282596251,
+  "time": 1365087839,
+  "mediantime": 1365084588,
+  "verificationprogress": 0.01854313338595879,
+  "initialblockdownload": true,
+  "chainwork": "000000000000000000000000000000000000000000000033d0acb81ec417c098",
+  "size_on_disk": 1849974513,
+  "pruned": true,
+  "pruneheight": 219367,
+  "automatic_pruning": true,
+  "prune_target_size": 2097152000,
+  "warnings": ""
+}
+```
