@@ -212,7 +212,7 @@ bitcoind -conf=/opt/bitcoin-23/bitcoin.conf
 ```
 Bitcoin Core будет работать в фоновом режиме. Вы можете взаимодействовать с ней, используя bitcoin-cli интерфейс командной строки (CLI).
 
-`getblockchaininfo` это команда RPC, которая возвращает различную статистическую информацию о текущем состоянии блокчейна. 
+[getblockchaininfo](https://bitcoincore.org/en/doc/23.0.0/rpc/blockchain/getblockchaininfo/) это команда RPC, которая возвращает различную статистическую информацию о текущем состоянии блокчейна. 
 ```sh
 bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getblockchaininfo
 ```
