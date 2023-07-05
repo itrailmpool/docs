@@ -67,10 +67,10 @@ rm -rf /opt/db-4.8.30.NC/docs
 ```sh
 cd ~
 
-wget https://bitcoincore.org/bin/bitcoin-core-23/SHA256SUMS && \
-    wget https://bitcoincore.org/bin/bitcoin-core-23/SHA256SUMS.asc && \
-    wget https://bitcoincore.org/bin/bitcoin-core-23/bitcoin-23.tar.gz && \
-    grep " bitcoin-23.tar.gz\$" SHA256SUMS | sha256sum -c - && \
+wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS && \
+    wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS.asc && \
+    wget https://bitcoincore.org/bin/bitcoin-core-23.0/bitcoin-23.0.tar.gz && \
+    grep " bitcoin-23.0.tar.gz\$" SHA256SUMS | sha256sum -c - && \
     tar -xzf *.tar.gz
 ```
 (Проверьте и укажите актуальную на момент установки версию https://bitcoincore.org/en/download/)
