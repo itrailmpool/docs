@@ -74,7 +74,7 @@ wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS && \
 (Проверьте и укажите актуальную на момент установки версию https://bitcoincore.org/en/download/)
 ### Шаг 4. Модификация конфигурационных файлов для корректной сборки Bitcoin Core
 ```sh
-cd bitcoin-23
+cd bitcoin-23.0
 sed -i '/AC_PREREQ/a\AR_FLAGS=cr' src/univalue/configure.ac
 sed -i '/AX_PROG_CC_FOR_BUILD/a\AR_FLAGS=cr' src/secp256k1/configure.ac
 sed -i s:sys/fcntl.h:fcntl.h: src/compat.h
