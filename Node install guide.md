@@ -65,8 +65,6 @@ rm -rf /opt/db-4.8.30.NC/docs
 
 ### Шаг 3. Загрузите исходный код Bitcoin Core и распакуйте архив
 ```sh
-cd ~
-
 wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS && \
     wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS.asc && \
     wget https://bitcoincore.org/bin/bitcoin-core-23.0/bitcoin-23.0.tar.gz && \
