@@ -32,8 +32,8 @@ sed s/__atomic_compare_exchange/__atomic_compare_exchange_db/g -i db-4.8.30.NC/d
 ```sh
 mkdir -p /opt/db-4.8.30.NC/
 ```
-##### 5. Сконфигурируйте и установите Berkeley DB 4.8:
-Данная команда выполняет скрипт configure, который подготавливает исходный код для сборки на вашей системе.
+##### 5. Сконфигурируйте и установите Berkeley DB 4.8
+Команда ../dist/configure выполняет скрипт, который подготавливает исходный код для сборки на вашей системе.
 ```sh
 cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/opt/db-4.8.30.NC
@@ -52,9 +52,21 @@ make -j4
 ```sh
 sudo make install
 ```
+##### 6. Очистка
+Удалите загруженные файлы, они больше не понадобятся:
+```sh
+cd ~
+rm -rf db-4.8.30.NC*
+```
+Дополнительно можно удалить загруженную документацию Berkeley DB (78 Mb):
+```sh
+rm -rf /opt/db-4.8.30.NC/docs
+```
 
 ### Шаг 3. Загрузите исходный код Bitcoin Core и распакуйте архив
 ```sh
+cd ~
+
 wget https://bitcoincore.org/bin/bitcoin-core-23/SHA256SUMS && \
     wget https://bitcoincore.org/bin/bitcoin-core-23/SHA256SUMS.asc && \
     wget https://bitcoincore.org/bin/bitcoin-core-23/bitcoin-23.tar.gz && \
@@ -115,7 +127,7 @@ bitcoind --version
 ```sh
 bitcoin-cli --version
 ```
-Команды долнжа вернуть:
+Команды должны вернуть:
 ```sh
 Bitcoin Core RPC client version v23.0.0
 Copyright (C) 2009-2022 The Bitcoin Core developers
