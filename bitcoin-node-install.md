@@ -36,7 +36,7 @@ sed -i s:sys/fcntl.h:fcntl.h: src/compat.h
 Команда `./configure` запускает скрипт конфигурации, который готовит среду для сборки из исходного кода:
 ```sh
 ./configure LDFLAGS=-L`ls -d /opt/db*`/lib/ CPPFLAGS=-I`ls -d /opt/db*`/include/ \
-    --prefix=/opt/bitcoin-23 \
+    --prefix=/opt/bitcoin-23.0 \
     --mandir=/usr/share/man \
     --disable-tests \
     --disable-bench \
@@ -48,7 +48,7 @@ sed -i s:sys/fcntl.h:fcntl.h: src/compat.h
 ```
 
 - `LDFLAGS=-Lls -d /opt/db*/lib/ и CPPFLAGS=-Ils -d /opt/db*/include/` эти параметры задают пути для библиотек и заголовочных файлов Berkeley DB.
-- `--prefix=/opt/bitcoin-23` указывает, куда будут установлены файлы после сборки.
+- `--prefix=/opt/bitcoin-23.0` указывает, куда будут установлены файлы после сборки.
 - `--mandir=/usr/share/man` Этот параметр указывает, где будут установлены файлы руководства (man pages).
 - `--disable-tests` отключает сборку модулей тестирования.
 - `--disable-bench` отключает сборку бенчмарков.
@@ -70,11 +70,11 @@ sudo make install
 
 При установке в кастомный каталог потребуется явно указать путь к bitcoin-cli и bitcoind:
 ```sh
-export PATH=$PATH:/opt/bitcoin-23/bin
+export PATH=$PATH:/opt/bitcoin-23.0/bin
 ```
 Чтобы изменения были постоянными и bitcoin-cli и bitcoind были доступен в $PATH при каждом запуске терминала, добавьте эту команду в файл .bashrc или .bash_profile в вашем домашнем каталоге:
 ```sh
-echo 'export PATH=$PATH:/opt/bitcoin-23/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:/opt/bitcoin-23.0/bin' >> ~/.bashrc
 ```
 
 Проверить, что bitcoin-cli и bitcoind успешно установлены можно так:
@@ -101,9 +101,13 @@ or <https://opensource.org/licenses/MIT>
 ### Шаг 6. Создание конфигурационного файла bitcoin.conf
 bitcoin.conf — это конфигурационный файл для bitcoind. Он содержит различные настройки для выполнения ноды Bitcoin. Основная структура файла представляет собой простой текстовый файл, в котором каждая строка представляет собой ключевую пару ключ=значение.
 
-Перейдите в каталог в который установлена нода и создайте файл bitcoin.conf:
+Создайте и перейдите в рабочий каталог ноды:
 ```sh
-cd /opt/bitcoin-23
+mkdir -p /home/user/.bitcoin
+cd /home/user/.bitcoin
+```
+Создайте конфигурационный файл bitcoin.conf:
+```sh
 nano bitcoin.conf
 ```
 Добавьте следующие парамтеры и сохраните файл:
@@ -115,10 +119,10 @@ prune=2000
 daemon=1
 
 # Set the directory for the blocks
-datadir=/home/user/bitcoin-23
+datadir=/home/user/.bitcoin
 
 # Set the directory for the logs
-debuglogfile=/home/user/log/bitcoin-23/debug.log
+debuglogfile=/home/user/log/bitcoin/debug.log
 
 # RPC Settings
 rpcuser=bitcoin
@@ -146,14 +150,13 @@ zmqpubhashblock=tcp://0.0.0.0:28332
 - `zmqpubhashblock=tcp://0.0.0.0:28332` включает оповещения ZeroMQ для новых блоков. Это нужно, чтобы внешнее приложение (майнинг-пул), могло получать уведомления каждый раз, когда нода Bitcoin Core обнаруживает новый блок.
 
 ### Шаг 7. Запуск Bitcoin Core
-Перед запуском создайте рабочий каталог и каталог для логов указанные в конфигурационном файле:
+Перед запуском создайте каталог для логов указанные в конфигурационном файле:
 ```sh
-mkdir -p /home/user/bitcoin-23
-mkdir -p /home/user/log/bitcoin-23/
+mkdir -p /home/user/log/bitcoin/
 ```
 Запускаем ноду Bitcoin Core указывая путь к конфигурационному файлу:
 ```sh
-bitcoind -conf=/opt/bitcoin-23/bitcoin.conf
+bitcoind -conf=/home/user/.bitcoin/bitcoin.conf
 ```
 Bitcoin Core будет работать в фоновом режиме. Вы можете взаимодействовать с ней, используя bitcoin-cli интерфейс командной строки (CLI).
 
