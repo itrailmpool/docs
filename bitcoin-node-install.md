@@ -77,7 +77,7 @@ export PATH=$PATH:/opt/bitcoin-23/bin
 echo 'export PATH=$PATH:/opt/bitcoin-23/bin' >> ~/.bashrc
 ```
 
-Это можно проверить так:
+Проверить, что bitcoin-cli и bitcoind успешно установлены можно так:
 ```sh
 bitcoind --version
 ```
@@ -96,11 +96,6 @@ The source code is available from <https://github.com/bitcoin/bitcoin>.
 This is experimental software.
 Distributed under the MIT software license, see the accompanying file COPYING
 or <https://opensource.org/licenses/MIT>
-```
-Либо воспользоваться командой whereis и посмотреть, возвращает ли она путь к bitcoind и bitcoin-cli.
-```sh
-whereis bitcoind
-whereis bitcoin-cli
 ```
 
 ### Шаг 6. Создание конфигурационного файла bitcoin.conf
