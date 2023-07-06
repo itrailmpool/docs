@@ -4,4 +4,4 @@
 - [Установка ноды Bitcoin](bitcoin-node-install.md)
 - [Установка ноды Litecoin](litecoin-node-install.md)
 - [Установка miningcore пула](miningcore-install.md)
-- [Установка miningcore Web UI]()
+- [Установка miningcore Web UI](miningcore-webui-install.md)
