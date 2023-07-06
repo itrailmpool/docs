@@ -130,5 +130,5 @@ TODO add example
 ```
 
 ## Полезные ссылки
-[Github репозиторий litecoin ](https://github.com/litecoin-project/litecoin/blob/master/doc/README.md)
-[Описание релиза 0.21.2](https://blog.litecoin.org/litecoin-core-v0-212-release-282f5405aa11)
+- [Github репозиторий litecoin ](https://github.com/litecoin-project/litecoin/blob/master/doc/README.md)
+- [Описание релиза 0.21.2](https://blog.litecoin.org/litecoin-core-v0-212-release-282f5405aa11)
