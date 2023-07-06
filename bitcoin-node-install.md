@@ -128,7 +128,7 @@ debuglogfile=/home/user/log/bitcoin/debug.log
 rpcuser=bitcoin
 rpcpassword=bitcoin
 rpcbind=0.0.0.0
-rpcallowip=192.168.86.0/24
+rpcallowip=192.168.100.0/24
 rpcport=8332
 
 # Server mode
@@ -144,7 +144,7 @@ zmqpubhashblock=tcp://0.0.0.0:28332
 - `debuglogfile=/path/to/your/log/directory/debug.log` устанавливает каталог, где Bitcoin Core будет сохранять логи отладки. Замените /path/to/your/log/directory/debug.log на реальный путь к каталогу и имени файла.
 - `rpcuser=bitcoin` и `rpcpassword=bitcoin` устанавливает имя пользователя и пароль для JSON-RPC подключений. В этом случае, имя пользователя и пароль оба установлены как "bitcoin".
 - `rpcbind=0.0.0.0` позволяет RPC подключениям с любого IP-адреса.
-- `rpcallowip=192.168.86.0/24` разрешает RPC подключения только с IP-адресов в указанном диапазоне.
+- `rpcallowip=192.168.100.0/24` разрешает RPC подключения только с IP-адресов в указанном диапазоне.
 - `rpcport=8332` устанавливает порт для RPC подключений. В данном случае, порт установлен на 8332.
 - `server=1` запускает Bitcoin Core в режиме сервера, что позволяет ему принимать JSON-RPC команды.
 - `zmqpubhashblock=tcp://0.0.0.0:28332` включает оповещения ZeroMQ для новых блоков. Это нужно, чтобы внешнее приложение (майнинг-пул), могло получать уведомления каждый раз, когда нода Bitcoin Core обнаруживает новый блок.
