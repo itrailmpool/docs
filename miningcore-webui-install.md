@@ -20,7 +20,7 @@ sudo nano /etc/nginx/sites-available/default
 ```sh
 server {
         listen 0.0.0.0:4001;
-        root /home/LINUX_ЮЗЕРНЕЙМ/webui;
+        root /home/user/miningcore.web.ui;
         index index.html;
 }
 ```
