@@ -35,16 +35,6 @@ CREATE DATABASE miningcore OWNER miningcore;
 sudo -u postgres psql -d miningcore -f createdb.sql
 ```
 
-
-> Note:
-> если вы получили ошибку вида:
-> could not change directory to "/home/user": Permission denied
-> psql: error: miningcore/src/Miningcore/Persistence/Postgres/Scripts/createdb.sql:
-> No such file or directory
-> то необходимо добавить юзера postgres в группу вашего пользователя
-> и повторить команду
-> sudo usermod -a -G $USER postgres
-
 ### Шаг 4. Собираем пул
 ```sh
 cd ~/miningcore/src/Miningcore
@@ -53,7 +43,11 @@ dotnet publish -c Release --framework net6.0 -o ../../build
 Процесс сборки может занять некоторое время, в зависимости от производительности системы.
 
 ### Шаг 5. Настройка конфигурационного файла
-Конфигурационный файл `config.conf` в директории ~/miningcore/build
+Содзадим конфигурационный файл `config.conf` в директории ~/miningcore/build:
+```sh
+nano config.conf
+```
+Копируем json конфигурацию и сохраняем файл:
 ```json
 {
   "logging": {
@@ -228,4 +222,10 @@ dotnet publish -c Release --framework net6.0 -o ../../build
     }
   ]
 }
+```
+
+
+### Шаг 6. Сохраняем и запускаем пул
+```sh
+./Miningcore -c config.json
 ```
