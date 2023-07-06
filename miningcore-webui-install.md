@@ -4,7 +4,7 @@
 cd /home/user/
 git clone https://github.com/itrailmpool/miningcore.web.ui.git
 ```
-### Шаг 1. Меняем url пула
+### Шаг 2. Меняем url пула
 ```sh
 nano webui/js/miningcore.js
 ```
