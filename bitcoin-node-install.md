@@ -192,9 +192,11 @@ bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin createwallet ""
 ```
 
 Создайте новый address:
+
 ```sh
-bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getnewaddress
+bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getnewaddress "" legacy
 ```
+> Note: Bitcoin Core нода по умолчанию создает адреса нового формата (SegWit). Чтобы нода вернула адрес в легаси формате нужно явно это указать добавив `"" legacy`.
 ## Полезные ссылки
 - [Bitcoin Core Config Generator](https://jlopp.github.io/bitcoin-core-config-generator/)
 - [Github репозиторий Bitcoin Core](https://github.com/bitcoin/bitcoin/blob/master/doc/README.md)
