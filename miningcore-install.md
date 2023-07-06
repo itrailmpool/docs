@@ -116,10 +116,10 @@ nano config.conf
       "id": "bitcoin01",
       "enabled": true,
       "coin": "bitcoin",
-      "address": "mmX7GM7BUEvtMLpgVzi4GzrmgQmTMqcWuP",
+      "address": "1DnPPFQPrfyNTiHPXhDFyqNnW9T62GEhB1",
       "rewardRecipients": [
         {
-          "address": "mgjWdBCShXSoNhg2JRdGitD1AANKfC4WuS",
+          "address": "145aD9pJo8jcyhQDMU7L8mfmmiZzSugEYy",
           "percentage": 0.5
         }
       ],
@@ -224,8 +224,10 @@ nano config.conf
 }
 ```
 
-
 ### Шаг 6. Сохраняем и запускаем пул
 ```sh
 ./Miningcore -c config.json
 ```
+
+## Описание параметров конфигурационного файла
+`TODO add config description`
