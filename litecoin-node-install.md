@@ -56,17 +56,22 @@ TODO: add example
 Удалите загруженные файлы, они больше не понадобятся:
 ```sh
 cd ~
-rm -rf litecoin-*
+rm -rf litecoin-* /root/.gnupg/
 ```
 
 ### Шаг 6. Создание конфигурационного файла litecoin.conf
 litecoin.conf — это конфигурационный файл для litecoind. Он содержит различные настройки для выполнения ноды Litecoin. Основная структура файла представляет собой простой текстовый файл, в котором каждая строка представляет собой ключевую пару ключ=значение.
 
-Перейдите в каталог в который установлена нода и создайте файл litecoin.conf:
+Создайте и перейдите в рабочий каталог ноды:
 ```sh
-cd /opt/litecoin-0.21.2
+mkdir -p /home/user/.litecoin
+cd /home/user/.litecoin
+```
+Создайте конфигурационный файл litecoin.conf:
+```sh
 nano litecoin.conf
 ```
+
 Добавьте следующие парамтеры и сохраните файл:
 ```sh
 # Enable pruning to save disk space
@@ -76,10 +81,10 @@ prune=1000
 daemon=1
 
 # Set the directory for the blocks
-datadir=/home/user/litecoin-0.21.2
+datadir=/home/user/.litecoin
 
 # Set the directory for the logs
-debuglogfile=/home/user/log/litecoin-0.21.2/debug.log
+debuglogfile=/home/user/log/litecoin/debug.log
 
 # RPC Settings
 rpcuser=litecoin
@@ -107,14 +112,13 @@ zmqpubhashblock=tcp://0.0.0.0:29332
 - `zmqpubhashblock=tcp://0.0.0.0:29332` включает оповещения ZeroMQ для новых блоков. Это нужно, чтобы внешнее приложение (майнинг-пул), могло получать уведомления каждый раз, когда нода Litecoin обнаруживает новый блок.
 
 ### Шаг 7. Запуск Litecoin
-Перед запуском создайте рабочий каталог и каталог для логов указанные в конфигурационном файле:
+Перед запуском создайте каталог для логов указанные в конфигурационном файле:
 ```sh
-mkdir -p /home/user/litecoin-0.21.2
-mkdir -p /home/user/log/litecoin-0.21.2/
+mkdir -p /home/user/log/litecoin/
 ```
 Запускаем ноду Litecoin указывая путь к конфигурационному файлу:
 ```sh
-litecoind -conf=/opt/litecoin-0.21.2/litecoin.conf
+litecoind -conf=/home/user/.litecoin/litecoin.conf
 ```
 Litecoin будет работать в фоновом режиме. Вы можете взаимодействовать с ней, используя litecoin-cli интерфейс командной строки (CLI).
 
