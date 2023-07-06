@@ -19,7 +19,7 @@ Oracle Linux использует Berkeley DB для предоставлени�
 ### Шаг 3. Скачивание архива с Litecoin и проверка его цифровой подписи
 ```sh
 wget https://download.litecoin.org/litecoin-0.21.2/linux/litecoin-0.21.2-x86_64-linux-gnu.tar.gz
-wget https://download.litecoin.org/litecoin-$0.21.2/linux/litecoin-0.21.2-x86_64-linux-gnu.tar.gz.asc
+wget https://download.litecoin.org/litecoin-0.21.2/linux/litecoin-0.21.2-x86_64-linux-gnu.tar.gz.asc
 gpg --keyserver pgp.mit.edu --recv-key 0x3620E9D387E55666
 gpg --verify litecoin-0.21.2-x86_64-linux-gnu.tar.gz.asc
 ```
