@@ -28,6 +28,7 @@ gpg --verify litecoin-0.21.2-x86_64-linux-gnu.tar.gz.asc
 ### Шаг 4. Распаковка архива и установка
 ```sh
 tar xfz litecoin-0.21.2-x86_64-linux-gnu.tar.gz
+mkdir -p /opt/litecoin-0.21.2/bin/
 sudo mv litecoin-0.21.2/bin/* /opt/litecoin-0.21.2/bin/
 ```
 
@@ -49,7 +50,18 @@ litecoin-cli --version
 ```
 Команды должны вернуть:
 ```sh
-TODO: add example
+Litecoin Core version v0.21.2
+Copyright (C) 2011-2022 The Litecoin Core developers
+Copyright (C) 2009-2022 The Bitcoin Core developers
+
+Please contribute if you find Litecoin Core useful. Visit
+<https://litecoin.org/> for further information about the software.
+The source code is available from
+<https://github.com/litecoin-project/litecoin>.
+
+This is experimental software.
+Distributed under the MIT software license, see the accompanying file COPYING
+or <https://opensource.org/licenses/MIT>
 ```
 
 ### Шаг 5. Очистка
@@ -129,8 +141,72 @@ litecoin-cli -rpcuser=litecoin -rpcpassword=litecoin getblockchaininfo
 Пример ответа ноды:
 ```sh
 {
-TODO add example
+  "chain": "main",
+  "blocks": 2504407,
+  "headers": 2504407,
+  "bestblockhash": "bfe0a43565732a97a1e6f678cc7db1f3b17cf67fba43fe58ae810b144305f75e",
+  "difficulty": 26593818.94736842,
+  "mediantime": 1688663822,
+  "verificationprogress": 0.9999980836927946,
+  "initialblockdownload": false,
+  "chainwork": "000000000000000000000000000000000000000000000c6c67b07d5b4eab68b8",
+  "size_on_disk": 1017370258,
+  "pruned": true,
+  "pruneheight": 2497532,
+  "automatic_pruning": true,
+  "prune_target_size": 1048576000,
+  "softforks": {
+    "bip34": {
+      "type": "buried",
+      "active": true,
+      "height": 710000
+    },
+    "bip66": {
+      "type": "buried",
+      "active": true,
+      "height": 811879
+    },
+    "bip65": {
+      "type": "buried",
+      "active": true,
+      "height": 918684
+    },
+    "csv": {
+      "type": "buried",
+      "active": true,
+      "height": 1201536
+    },
+    "segwit": {
+      "type": "buried",
+      "active": true,
+      "height": 1201536
+    },
+    "taproot": {
+      "type": "bip8",
+      "bip8": {
+        "status": "active",
+        "start_height": 2161152,
+        "timeout_height": 2370816,
+        "since": 2257920
+      },
+      "height": 2257920,
+      "active": true
+    },
+    "mweb": {
+      "type": "bip8",
+      "bip8": {
+        "status": "active",
+        "start_height": 2217600,
+        "timeout_height": 2427264,
+        "since": 2265984
+      },
+      "height": 2265984,
+      "active": true
+    }
+  },
+  "warnings": ""
 }
+
 ```
 
 ## Полезные ссылки
