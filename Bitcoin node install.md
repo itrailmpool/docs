@@ -1,8 +1,4 @@
-# Руководство по установке и запуску блокчейн нод
-
-Предполагается, что у вас уже установлен Oracle Linux 8 и у вас есть права root или возможность использовать команду sudo.
-
-## Bitcoin нода
+# Bitcoin нода
 ### Шаг 1. Обновите свою систему
 ```sh
 sudo dnf update -y
@@ -33,7 +29,7 @@ sed s/__atomic_compare_exchange/__atomic_compare_exchange_db/g -i db-4.8.30.NC/d
 mkdir -p /opt/db-4.8.30.NC/
 ```
 ##### 5. Сконфигурируйте и установите Berkeley DB 4.8
-Команда ../dist/configure выполняет скрипт, который подготавливает исходный код для сборки на вашей системе.
+Команда `../dist/configure` выполняет скрипт, который подготавливает исходный код для сборки на вашей системе.
 ```sh
 cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/opt/db-4.8.30.NC
