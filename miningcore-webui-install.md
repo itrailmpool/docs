@@ -14,9 +14,10 @@ var API            = "http://192.168.XX.XX:4000/" + "api/";
 ```
 `192.168.XX.XX` - адрес вашей машины в локальной сети
 
-### Шаг 3. Настраиваем веб-сервер nginx
-
+### Шаг 3. Настраиваем nginx
+```sh
 sudo nano /etc/nginx/sites-available/default
+```
 ```sh
 server {
         listen 0.0.0.0:4001;
