@@ -23,6 +23,7 @@ git clone https://github.com/itrailmpool/miningcore.git
 ```
 
 ### Шаг 3. Настройка postgres
+> Note: Предполагается, что postgres предаврительно установлен
 ```sh
 sudo -u postgres psql
 
