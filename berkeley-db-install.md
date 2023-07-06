@@ -1,7 +1,5 @@
-# Berkeley DB 4.8
-Oracle Linux использует "Berkeley DB" для предоставления функциональности базы данных, которая необходима для Bitcoin Core. Эта библиотека представлена в пакетах libdb и libdb-devel. Но Bitcoin Core требуется версия этой библиотеки 4.8, в то время как в репозитории Oracle Linux может быть более новая версия, что может вызвать проблемы.
+# Установка Berkeley DB 4.8
 
-Нужно вручную скомпилировать и установить версию Berkeley DB 4.8:
 ### 1. Загрузите исходный код Berkeley DB 4.8:
 ```sh
 wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
