@@ -185,3 +185,16 @@ bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getblockchaininfo
   "warnings": ""
 }
 ```
+## Создание кошлека и адресов
+Создайте новый wallet для адресов ноды:
+```sh
+bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin createwallet ""
+```
+
+Создайте новый address:
+```sh
+bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getnewaddress
+```
+## Полезные ссылки
+- [Bitcoin Core Config Generator](https://jlopp.github.io/bitcoin-core-config-generator/)
+- [Github репозиторий Bitcoin Core](https://github.com/bitcoin/bitcoin/blob/master/doc/README.md)
