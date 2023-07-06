@@ -30,10 +30,9 @@ CREATE ROLE miningcore WITH LOGIN ENCRYPTED PASSWORD 'miningcore';
 CREATE DATABASE miningcore OWNER miningcore;
 \q
 ```
-Скрипт для создания структуры БД: [createdb.sql](createdb.sql)
-
+Выполнить скрипт для создания структуры БД [createdb.sql](createdb.sql):
 ```sh
-sudo -u postgres psql -d miningcore -f miningcore/src/Miningcore/Persistence/Postgres/Scripts/createdb.sql
+sudo -u postgres psql -d miningcore -f createdb.sql
 ```
 
 
