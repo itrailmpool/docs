@@ -13,3 +13,18 @@ nano webui/js/miningcore.js
 var API            = "http://192.168.XX.XX:4000/" + "api/";
 ```
 `192.168.XX.XX` - адрес вашей машины в локальной сети
+
+### Шаг 3. Настраиваем веб-сервер nginx
+
+sudo nano /etc/nginx/sites-available/default
+```sh
+server {
+        listen 0.0.0.0:4001;
+        root /home/LINUX_ЮЗЕРНЕЙМ/webui;
+        index index.html;
+}
+```
+Cохраняем и перезапускаем nginx
+```sh
+sudo systemctl restart nginx.service
+```
