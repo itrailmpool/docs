@@ -1,4 +1,4 @@
-# Bitcoin нода
+# Установка Bitcoin ноды
 ### Шаг 1. Обновите свою систему
 ```sh
 sudo dnf update -y
