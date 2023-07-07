@@ -48,21 +48,6 @@ litecoind --version
 ```sh
 litecoin-cli --version
 ```
-Команды должны вернуть:
-```sh
-Litecoin Core version v0.18.1
-Copyright (C) 2011-2022 The Litecoin Core developers
-Copyright (C) 2009-2022 The Bitcoin Core developers
-
-Please contribute if you find Litecoin Core useful. Visit
-<https://litecoin.org/> for further information about the software.
-The source code is available from
-<https://github.com/litecoin-project/litecoin>.
-
-This is experimental software.
-Distributed under the MIT software license, see the accompanying file COPYING
-or <https://opensource.org/licenses/MIT>
-```
 
 ### Шаг 5. Очистка
 Удалите загруженные файлы, они больше не понадобятся:
