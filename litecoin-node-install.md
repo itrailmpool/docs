@@ -20,7 +20,7 @@ Oracle Linux использует Berkeley DB для предоставлени�
 ```sh
 wget https://download.litecoin.org/litecoin-0.18.1/linux/litecoin-0.18.1-x86_64-linux-gnu.tar.gz
 wget https://download.litecoin.org/litecoin-0.18.1/linux/litecoin-0.18.1-x86_64-linux-gnu.tar.gz.asc
-gpg --keyserver pgp.mit.edu --recv-key 0x3620E9D387E55666
+gpg --keyserver pgp.mit.edu --recv-key FE3348877809386C
 gpg --verify litecoin-0.18.1-x86_64-linux-gnu.tar.gz.asc
 ```
 (Проверьте и укажите актуальную на момент установки версию https://blog.litecoin.org/)
