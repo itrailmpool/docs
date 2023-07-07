@@ -8,7 +8,7 @@ git clone https://github.com/itrailmpool/miningcore.web.ui.git
 ```sh
 nano webui/js/miningcore.js
 ```
-В открывшемся файле преобразуем 33 строку следующим образом:
+В открывшемся файле преобразуем 9 строку следующим образом:
 ```sh
 var API            = "http://192.168.XX.XX:4000/" + "api/";
 ```
