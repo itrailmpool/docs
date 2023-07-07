@@ -127,15 +127,14 @@ debuglogfile=/home/user/log/bitcoin/debug.log
 # RPC Settings
 rpcuser=bitcoin
 rpcpassword=bitcoin
-rpcbind=0.0.0.0
-rpcallowip=192.168.100.0/24
+#rpcallowip=192.168.100.0/24
 rpcport=8332
 
 # Server mode
 server=1
 
 # ZeroMQ notification options
-zmqpubhashblock=tcp://0.0.0.0:28332
+zmqpubhashblock=tcp://127.0.0.1:28332
 ```
 Описание параметров конфигурационного файла:
 - `prune=2000` параметр позволяет вам обрезать (или "prune") блокчейн, сохраняя только определенное количество МБ данных. В данном случае, Bitcoin Core будет хранить только последние 2000 МБ данных блокчейна, удаляя старые блоки, чтобы сэкономить место на диске.
@@ -143,7 +142,6 @@ zmqpubhashblock=tcp://0.0.0.0:28332
 - `datadir=/path/to/your/data/directory` устанавливает каталог, где Bitcoin Core будет хранить данные блокчейна. Замените /path/to/your/data/directory на реальный путь к каталогу.
 - `debuglogfile=/path/to/your/log/directory/debug.log` устанавливает каталог, где Bitcoin Core будет сохранять логи отладки. Замените /path/to/your/log/directory/debug.log на реальный путь к каталогу и имени файла.
 - `rpcuser=bitcoin` и `rpcpassword=bitcoin` устанавливает имя пользователя и пароль для JSON-RPC подключений. В этом случае, имя пользователя и пароль оба установлены как "bitcoin".
-- `rpcbind=0.0.0.0` позволяет RPC подключениям с любого IP-адреса.
 - `rpcallowip=192.168.100.0/24` разрешает RPC подключения только с IP-адресов в указанном диапазоне.
 - `rpcport=8332` устанавливает порт для RPC подключений. В данном случае, порт установлен на 8332.
 - `server=1` запускает Bitcoin Core в режиме сервера, что позволяет ему принимать JSON-RPC команды.
