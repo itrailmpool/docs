@@ -204,3 +204,8 @@ litecoin-cli -rpcuser=litecoin -rpcpassword=litecoin getnewaddress
 ## Полезные ссылки
 - [Github репозиторий litecoin ](https://github.com/litecoin-project/litecoin/blob/master/doc/README.md)
 - [Описание релиза 0.21.2](https://blog.litecoin.org/litecoin-core-v0-212-release-282f5405aa11)
+#### MimbleWimble Extension Blocks (MWEB)
+На настоящий момент пул не поддерживает обновление MimbleWimble Extension Blocks в Litecoin, то есть нельзя использовать ноду версии 0.21+.
+- [MWEB - Mining Changes](https://github.com/litecoin-project/litecoin/blob/0.21/doc/mweb/mining-changes.md)
+- [MWEB дискуссия в оргигинальном репозитории miningcore](https://github.com/oliverw/miningcore/issues/1546)
+- [MWEB Pull Request в оригинальном репозитории miningcore](https://github.com/oliverw/miningcore/pull/1563)
