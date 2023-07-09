@@ -230,6 +230,10 @@ nano config.json
 ```sh
 ./Miningcore -c config.json
 ```
+Для запуска в фоновом режиме выполните:
+```sh
+nohup ./Miningcore -c config.json &
+```
 
 ## Описание параметров конфигурационного файла
 `TODO add config description`
