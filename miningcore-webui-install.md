@@ -16,13 +16,16 @@ var API            = "http://192.168.XX.XX:4000/" + "api/";
 
 ### Шаг 3. Настраиваем nginx
 ```sh
-sudo nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/conf.d/miningcoreweb.conf
 ```
 ```sh
 server {
-        listen 0.0.0.0:4001;
-        root /home/user/miningcore.web.ui;
-        index index.html;
+	listen 0.0.0.0:4001;
+
+	location / {
+		root /home/user/miningcore.web.ui;
+		index index.html;
+	}
 }
 ```
 Cохраняем и перезапускаем nginx
