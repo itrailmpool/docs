@@ -86,7 +86,7 @@ debuglogfile=/home/user/log/litecoin/debug.log
 # RPC Settings
 rpcuser=litecoin
 rpcpassword=litecoin
-#rpcallowip=192.168.86.0/24
+#rpcallowip=192.168.100.0/24
 rpcport=9332
 
 # Server mode
