@@ -44,8 +44,9 @@ dotnet publish -c Release --framework net6.0 -o ../../build
 Процесс сборки может занять некоторое время, в зависимости от производительности системы.
 
 ### Шаг 5. Настройка конфигурационного файла
-Содзадим конфигурационный файл `config.json` в директории ~/miningcore/build:
+Содзадим конфигурационный файл `config.json` в директории ../miningcore/build:
 ```sh
+cd /home/user/miningcore/build/
 nano config.json
 ```
 Копируем json конфигурацию и сохраняем файл:
