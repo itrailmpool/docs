@@ -6,7 +6,7 @@ git clone https://github.com/itrailmpool/miningcore.web.ui.git
 ```
 ### Шаг 2. Меняем url пула
 ```sh
-nano webui/js/miningcore.js
+nano miningcore.web.ui/js/miningcore.js
 ```
 В открывшемся файле преобразуем 9 строку следующим образом:
 ```sh
