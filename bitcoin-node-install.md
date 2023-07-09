@@ -186,7 +186,7 @@ bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin getblockchaininfo
 ## Создание кошлека и адресов
 Создайте новый wallet для адресов ноды:
 ```sh
-bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin createwallet ""
+bitcoin-cli -rpcuser=bitcoin -rpcpassword=bitcoin -named createwallet wallet_name="" descriptors=false
 ```
 
 Создайте новый address:
