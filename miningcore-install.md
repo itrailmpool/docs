@@ -16,13 +16,8 @@ rm packages-microsoft-prod.rpm
 ```sh
 sudo dnf install -y dotnet-sdk-6.0 git cmake make openssl-devel pkgconfig boost-devel libsodium-devel zeromq-devel gcc-c++
 ```
-### Шаг 2. Клонируем репозиторий пула:
-```sh
-cd /home/user/
-git clone https://github.com/itrailmpool/miningcore.git
-```
 
-### Шаг 3. Настройка postgres
+### Шаг 2. Настройка postgres
 > Note: Предполагается, что postgres предаврительно установлен
 ```sh
 sudo -u postgres psql
@@ -35,10 +30,15 @@ CREATE DATABASE miningcore OWNER miningcore;
 ```sh
 sudo -u postgres psql -d miningcore -f createdb.sql
 ```
+### Шаг 3. Клонируем репозиторий пула:
+```sh
+cd /home/user/
+git clone https://github.com/itrailmpool/miningcore.git
+```
 
 ### Шаг 4. Собираем пул
 ```sh
-cd ~/miningcore/src/Miningcore
+cd miningcore/src/Miningcore
 dotnet publish -c Release --framework net6.0 -o ../../build
 ```
 Процесс сборки может занять некоторое время, в зависимости от производительности системы.
