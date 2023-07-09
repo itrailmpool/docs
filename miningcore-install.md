@@ -151,11 +151,11 @@ nano config.json
       },
       "daemons": [
         {
-          "host": "0.0.0.0",
+          "host": "127.0.0.1",
           "port": 8332,
           "user": "bitcoin",
           "password": "bitcoin",
-          "zmqBlockNotifySocket": "tcp://0.0.0.0:28332"
+          "zmqBlockNotifySocket": "tcp://127.0.0.1:28332"
         }
       ],
       "paymentProcessing": {
@@ -171,10 +171,10 @@ nano config.json
       "id": "litecoin01",
       "enabled": true,
       "coin": "litecoin",
-      "address": "ltc1qqsdkv6e2gsa4rpjwvc6cg4xlresw2s484kdsfe",
+      "address": "M8cvPxk1UaV42exJLAQcP7A2uMp9Yk7jRB",
       "rewardRecipients": [
         {
-          "address": "ltc1qznykl2a6sxff7tt8se4gfdhel0n4rmqhfwlt8s",
+          "address": "M9NTQPQDfmMSPJRWorUfr3CdMHtdKdvfVf",
           "percentage": 0.5
         }
       ],
@@ -205,11 +205,11 @@ nano config.json
       },
       "daemons": [
         {
-          "host": "0.0.0.0",
+          "host": "127.0.0.1",
           "port": 9332,
           "user": "litecoin",
           "password": "litecoin",
-          "zmqBlockNotifySocket": "tcp://0.0.0.0:29332"
+          "zmqBlockNotifySocket": "tcp://127.0.0.1:29332"
         }
       ],
       "paymentProcessing": {
