@@ -161,7 +161,7 @@ nano config.json
       ],
       "paymentProcessing": {
         "enabled": true,
-        "minimumPayment": 0.02,
+        "minimumPayment": 0.01,
         "payoutScheme": "PPLNS",
         "payoutSchemeConfig": {
           "factor": 2.0
@@ -215,7 +215,7 @@ nano config.json
       ],
       "paymentProcessing": {
         "enabled": true,
-        "minimumPayment": 0.02,
+        "minimumPayment": 0.01,
         "payoutScheme": "PPLNS",
         "payoutSchemeConfig": {
           "factor": 2.0
