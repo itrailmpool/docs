@@ -5,3 +5,8 @@
 - [Установка ноды Litecoin](litecoin-node-install.md)
 - [Установка miningcore пула](miningcore-install.md)
 - [Установка miningcore Web UI](miningcore-webui-install.md)
+## Полезные ссылки
+- [### Stratum portocol](https://en.bitcoin.it/wiki/Stratum_mining_protocol)
+## Книги
+- [Криптографические основы блокчейн-технологий](books/basics_of_blockchain_cryptography.pdf)
+- [Mastering Bitcoin](books/mastering_bitcoin.pdf)
