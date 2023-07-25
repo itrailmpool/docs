@@ -52,6 +52,13 @@ nano config.json
 Копируем json конфигурацию и сохраняем файл:
 ```json
 {
+  "clusterName": "pull_name",
+  "statistics": {
+    "updateInterval": 120,
+    "hashrateCalculationWindow": 10,
+    "gcInterval": 4,
+    "cleanupDays": 180                        
+  },
   "logging": {
     "level": "info",
     "enableConsoleLog": true,
@@ -121,8 +128,8 @@ nano config.json
       "address": "1DnPPFQPrfyNTiHPXhDFyqNnW9T62GEhB1",
       "rewardRecipients": [
         {
-          "address": "145aD9pJo8jcyhQDMU7L8mfmmiZzSugEYy",
-          "percentage": 0.5
+          "address": "bc1qwqkhu8jp4p3revxwwxfq9hc4uymgeksjsrmers",
+          "percentage": 1.0
         }
       ],
       "blockRefreshInterval": 400,
@@ -137,16 +144,16 @@ nano config.json
       "ports": {
         "3052": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.02,
+          "difficulty": 5000,
           "tls": false,
           "tlsPfxFile": "/var/lib/certs/mycert.pfx",
           "varDiff": {
-            "minDiff": 0.01,
+            "minDiff": 1000,
             "maxDiff": null,
             "targetTime": 15,
             "retargetTime": 90,
             "variancePercent": 30,
-            "maxDelta": 500
+            "maxDelta": 5000
           }
         }
       },
@@ -191,16 +198,16 @@ nano config.json
       "ports": {
         "3053": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.02,
+          "difficulty": 5000,
           "tls": false,
           "tlsPfxFile": "/var/lib/certs/mycert.pfx",
           "varDiff": {
-            "minDiff": 0.01,
+            "minDiff": 1000,
             "maxDiff": null,
             "targetTime": 15,
             "retargetTime": 90,
             "variancePercent": 30,
-            "maxDelta": 500
+            "maxDelta": 5000
           }
         }
       },
@@ -236,6 +243,13 @@ nohup ./Miningcore -c config.json &
 ```
 
 ## Описание параметров конфигурационного файла
+##### Конфигурационный параметр `clusterName` определяет имя пула (значение будет отображаться в таблице share, столбец source)
+##### Конфигурационные параметры для `statistics` определяют настройки обновления и очистки статистики для miningcore:
+- `updateInterval` определяет, как часто пул должен обновлять свои статистические данные. Значение задается в секундах.
+- `hashrateCalculationWindow` определяет размер окна времени, которое должно быть учтено при вычислении хешрейта. Хешрейт — это скорость, с которой добытчик может выполнить определенное количество вычислений. Значение задается в минутах.
+- `gcInterval` определяет, как часто пул должен проводить очистку старой статистики. Значение задается в часах.
+- `cleanupDays` определяет, сколько дней статистики должно сохраняться перед тем, как она будет удалена во время очистки. Значение задается в днях.
+
 ##### Конфигурационные параметры для `logging` определяют настройки журналирования для miningcore:
 - `level` уровень логирования. Значения могут включать в себя "trace", "debug", "info", "warn", и "error". "info" это обычный уровень, который включает в себя основную информацию о действиях программы.
 - `enableConsoleLog` определяет, будут ли записи логов выводиться в консоль. Если это значение установлено как true, то логи будут отображаться в консоли.
