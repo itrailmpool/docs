@@ -22,7 +22,7 @@ git clone https://github.com/itrailmpool/itrailmpool-viewer.git
 ```
 ### Шаг 4. Собираем приложение
 ```sh
-mvn clean install
+mvn clean package
 ```
 ### Шаг 5.Запускаем приложение
 ```sh
