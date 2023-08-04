@@ -147,12 +147,12 @@ nano config.json
           "tls": false,
           "tlsPfxFile": "/var/lib/certs/mycert.pfx",
           "varDiff": {
-            "minDiff": 1000,
+            "minDiff": 5000,
             "maxDiff": null,
             "targetTime": 15,
             "retargetTime": 90,
             "variancePercent": 30,
-            "maxDelta": 5000
+            "maxDelta": 1000
           }
         }
       },
