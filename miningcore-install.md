@@ -55,7 +55,6 @@ nano config.json
   "clusterName": "pull_name",
   "statistics": {
     "updateInterval": 120,
-    "hashrateCalculationWindow": 10,
     "gcInterval": 4,
     "cleanupDays": 180                        
   },
@@ -106,7 +105,7 @@ nano config.json
   "api": {
     "enabled": true,
     "listenAddress": "0.0.0.0",
-    "port": 4000,
+    "port": 4100,
     "metricsIpWhitelist": [],
     "rateLimiting": {
       "disabled": false,
