@@ -5,6 +5,12 @@
 - [Установка ноды Litecoin](litecoin-node-install.md)
 - [Установка miningcore пула](miningcore-install.md)
 - [Установка miningcore Web UI](miningcore-webui-install.md)
+- [Установка viewer](itrail-viewer-install.md)
+
+## Схема компонентов пула
+![Components diagram](/miningpool-diagram.jpg "Mining pool components diagram")
+
+
 ## Полезные ссылки
 - [Stratum portocol](https://en.bitcoin.it/wiki/Stratum_mining_protocol)
 ## Книги
