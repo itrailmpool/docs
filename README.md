@@ -16,3 +16,4 @@
 ## Книги
 - [Криптографические основы блокчейн-технологий](books/basics_of_blockchain_cryptography.pdf)
 - [Mastering Bitcoin](books/mastering_bitcoin.pdf)
+- [Mastering Bitcoin (Rus)](books/mastering_bitcoin_(rus).pdf)
