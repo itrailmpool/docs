@@ -23,6 +23,12 @@ cd /home/user/miningcore/build/
 nohup ./Miningcore -c config.json &
 ```
 Пул должен запуститься, но будет ожидать когда станет доступна нода 
+```sh
+[2023-11-02 19:42:24.2920] [I] [bitcoin01] Waiting for daemons to come online ...
+[2023-11-02 19:42:34.2940] [I] [bitcoin01] Waiting for daemons to come online ...
+[2023-11-02 19:44:26.2234] [I] [bitcoin01] All daemons online
+[2023-11-02 19:47:22.8341] [I] [bitcoin01] All daemons synched with blockchain
+```
 ##### 2. Запускаем Bitcoin core ноду.
 Запустим  ноду:
 ```sh
