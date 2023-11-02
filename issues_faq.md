@@ -63,3 +63,11 @@ username soft nofile 4096
 username hard nofile 10240
 ```
 Сохраните файл и перезагрузите систему, чтобы применить изменения.
+##### 4. После завершения синхронизации ноды убедитесь, что пул работает:
+Возможны кейсы, когда пул падает, не дождавшись ответа от ноды:
+```sh
+[2023-11-02 19:44:26.2234] [I] [bitcoin01] All daemons online
+[2023-11-02 19:47:22.8341] [I] [bitcoin01] All daemons synched with blockchain
+[2023-11-02 19:49:03.6535] [E] [bitcoin01] Init RPC failed: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing., The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing., The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+```
+В таких случаях пут нужно перезапустить.
