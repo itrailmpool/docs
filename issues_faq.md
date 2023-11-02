@@ -34,7 +34,6 @@ tail -f /home/user/log/bitcoin/debug.log
 ```
 В логе должен быть виден процесс подключения к peer'ам сети биткоин и процесс синхронизации
 ```sh
-2023-10-29T11:41:35Z New outbound peer connected: version: 70016, blocks=814368, peer=2319 (block-relay-only)
 2023-11-02T16:46:02Z UpdateTip: new best=00000000000000000000129a9255ca1863a9e4e85d4dceccd6b0ecb6eb259420 height=814957 version=0x3fffe000 log2_work=94.513868 tx=912558586 date='2023-11-02T10:05:04Z' progress=0.999924 cache=27.5MiB(196973txo)
 2023-11-02T16:46:13Z UpdateTip: new best=000000000000000000007e184e9c0956c7a9b61bb4010a0e043df9c88dbb956f height=814958 version=0x20008000 log2_work=94.513882 tx=912562050 date='2023-11-02T10:07:18Z' progress=0.999924 cache=29.0MiB(206428txo)
 2023-11-02T16:46:33Z UpdateTip: new best=0000000000000000000192878b71362fdcfe3f7a6c7d23063d9b4df0729325a1 height=814959 version=0x24cba000 log2_work=94.513895 tx=912565852 date='2023-11-02T10:37:58Z' progress=0.999930 cache=32.3MiB(219773txo)
